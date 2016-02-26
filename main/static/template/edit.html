@@ -1,0 +1,58 @@
+<div class="mdl-cell mdl-cell--9-col">
+  <div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__supporting-text">
+      <select ng-model="vm.job.type" id="type">
+        <option>Full time</option>
+        <option>Part time</option>
+        <option>Contract</option>
+      </select>
+      /
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" ng-model="vm.job.location" id="location">
+        <label class="mdl-textfield__label" for="company">Location</label>
+      </div>
+      <br>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
+        <input class="mdl-textfield__input" type="text" ng-model="vm.job.title" id="title">
+        <label class="mdl-textfield__label" for="company">Title</label>
+      </div>
+      <hr>
+      <div class="mdl-textfield mdl-js-textfield full">
+        <textarea class="mdl-textfield__input mdl-textfield--floating-label" type="text" rows="10" id="description" ng-model="vm.job.description_md"></textarea>
+        <label class="mdl-textfield__label" for="company">Description</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mdl-cell mdl-cell--3-col">
+  <div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__supporting-text">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" ng-model="vm.job.company" type="text" id="company">
+        <label class="mdl-textfield__label" for="company">Company Name</label>
+      </div>
+      <hr>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" ng-model="vm.job.company_logo" type="text" id="company_logo">
+        <label class="mdl-textfield__label" for="company_logo">Company logo</label>
+      </div>
+<!--      <input type="file" file-preview ng-model="vm.job.company_logo_file">-->
+<!--      <img ng-src="{{ vm.job.company_logo }}">-->
+      <hr>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" ng-model="vm.job.company_url" type="text" id="company_url">
+        <label class="mdl-textfield__label" for="company_url">Company Url</label>
+      </div>
+    </div>
+  </div>
+  <div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__supporting-text">
+      How to apply
+      <hr>
+      <div class="mdl-textfield mdl-js-textfield">
+        <textarea class="mdl-textfield__input" type="text" rows="4" id="how_to_apply" ng-model="vm.job.how_to_apply_md"></textarea>
+        <label class="mdl-textfield__label" for="how_to_apply">Eg. Email your resume to <br>job@acme.com</label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="mdl-layout__content" style="display:block">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+      <h4>Post a job</h4>
+      <label style="display: inline" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="preview" ng-click="vm.switch()">
+        <input type="checkbox" id="preview" class="mdl-switch__input" ng-model="vm.preview">
+        <span class="mdl-switch__label">Preview</span>
+      </label>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-margins" ng-click="vm.save()">Save</button>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+      <ng-include class="mdl-grid" src="'/app/template/edit.html?v4'" ng-hide="vm.preview" onload="vm.switch()"></ng-include>
+      <ng-include src="'/app/template/detail.html'" ng-show="vm.preview"></ng-include>
+    </div>
+  </div>
+</div>

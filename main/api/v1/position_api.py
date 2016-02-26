@@ -14,6 +14,7 @@ from api.helpers import ArgumentValidator, make_list_response, make_empty_ok_res
 from flask import request, g
 from pydash import _
 from api.decorators import model_by_key, user_by_username, authorization_required, admin_required
+from datetime import datetime
 
 @API.resource('/api/v1/positions')
 class PositionsAPI(Resource):
@@ -42,8 +43,9 @@ class PositionsAPI(Resource):
     
     def post(self):
         position_to_insert = request.get_json()
+        print position_to_insert
         position = Position(
-            created_at = position_to_insert["created_at"],
+            created_at = str(datetime.now()),
             title = position_to_insert["title"],
             location = position_to_insert["location"],
             type = position_to_insert["type"],
@@ -52,7 +54,6 @@ class PositionsAPI(Resource):
             company = position_to_insert["company"],
             company_url = position_to_insert["company_url"],
             company_logo = position_to_insert["company_logo"],
-            url = position_to_insert["url"]
         )
         position.put()
         return position.to_json(), 201
@@ -61,6 +62,8 @@ class PositionsAPI(Resource):
 class PositionAPI(Resource):
     def get(self, id):
         position = Position.get_by_id(id)
+        if position is None:
+            return {}, 404
         return position.to_json()
     
     def put(self, id):

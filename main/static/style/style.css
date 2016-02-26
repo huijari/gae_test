@@ -1,0 +1,58 @@
+body {
+  background-color: #ececec;
+}
+a {
+  text-decoration: none;
+}
+select {
+  padding: 4px 0;
+  background: 0 0;
+  color: inherit;
+  font-size: 16px;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+.mdl-layout-title a {
+  color: white;
+}
+img {
+  max-width: 100%;
+}
+.mdl-layout__content {
+  padding: 10px 10px;
+}
+.mdl-form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+.mdl-card {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.mdl-card__supporting-text {
+  width: auto;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.mdl-spinner {
+  margin-right: 10px;
+}
+.mdl-margins {
+  margin-left: 40px;
+}
+.full {
+  width: 100%;
+}
+[file-preview] {
+  margin-bottom: 10px;
+}
+
+.mdl-card {
+  
+}

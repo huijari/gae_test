@@ -1,0 +1,52 @@
+<form class="mdl-form mdl-shadow--2dp" ng-submit="vm.submit()">
+  <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner" ng-class="vm.loading"></div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" ng-model="vm.description" name="description"
+      placeholder="Description" id="jobdescription">
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" ng-model="vm.location" type="text" name="location"
+      placeholder="Location" id="location">
+  </div>
+  <div class="mdl-textfield">
+    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="fulltime">
+      <input type="checkbox" id="fulltime" ng-model="vm.fullTime" class="mdl-checkbox__input" checked>
+      <span class="mdl-checkbox__label">Full Time Only</span>
+    </label>
+  </div>
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="vm.search()">
+    Search
+  </button><hr>
+</form>
+<div class="mdl-layout__content" style="display:block" ng-hide="vm.jobs.length == 0">
+  <h5>Showing <span ng-bind="vm.jobs.length"></span> jobs</h5>
+  <div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__supporting-text">
+      <ul class="mdl-list">
+        <div ng-repeat="job in vm.jobs">
+          <hr>
+          <li class="mdl-list__item mdl-list__item--three-line">
+            <span class="mdl-list__item-primary-content">
+              <span><a ng-href="#/detail/{{ job.id }}" ng-bind="job.title"></a></span>
+              <span class="mdl-list__item-text-body">
+                <span ng-bind="job.company"></span> - <span ng-bind="job.type"></span>
+              </span>
+            </span>
+            <span class="mdl-list__item-secondary-content">
+              <span ng-bind="job.location"></span>
+              <span class="mdl-list__item-text-body" ng-bind="job.created_at | fromnow"></span>
+            </span>
+          </li>
+        </div><hr>
+      </ul>
+    </div>
+  </div>
+  <div class="pagination">
+    <button class="mdl-button mdl-js-button mdl-button--primary" ng-click="vm.prev()">
+      Prev
+    </button>
+    <button class="mdl-button mdl-js-button mdl-button--primary" ng-click="vm.next()">
+      Next
+    </button>
+  </div>
+</div>

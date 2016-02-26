@@ -1,0 +1,26 @@
+body {
+  background-color: #ececec;
+}
+.mdl-layout__content {
+  padding: 10px 10px;
+}
+.mdl-form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+.mdl-card {
+  width: 100%;
+}
+.mdl-card__supporting-text {
+  width: auto;
+}
+.mdl-textfield {
+  margin-left: 16px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}

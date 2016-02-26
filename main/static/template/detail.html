@@ -1,0 +1,33 @@
+<div class="mdl-layout__content" style="display:block">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--9-col">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          <h5>
+            <span ng-bind="vm.job.type"></span> / <span ng-bind="vm.job.location"></span></h5>
+          <h4 ng-bind="vm.job.title"></h4>
+          <hr>
+          <p ng-bind-html="vm.job.description"></p>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          <span ng-bind="vm.job.company"></span>
+          <hr>
+          <img ng-src="{{ vm.job.company_logo }}">
+          <hr>
+          <a ng-href="{{ vm.job.company_url }}" ng-bind="vm.job.company_url"></a>
+        </div>
+      </div>
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          How to apply
+          <hr>
+          <p ng-bind-html="vm.job.how_to_apply"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
